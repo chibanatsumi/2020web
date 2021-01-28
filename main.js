@@ -6,3 +6,13 @@ function setUserName() {
   localStorage.setItem('name', myName);
   myHeading.textContent =  myName;
 }
+
+if(!localStorage.getItem('name')) {
+  setUserName();
+} else {
+  let storedName = localStorage.getItem('name');
+  myHeading.textContent = storedName;
+}
+myButton.onclick = function() {
+  setUserName();
+}
